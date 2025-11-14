@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Lockifi H1 • Battery Replacement Guide</title>
+  <meta name="description" content="Enhanced battery replacement guide for Lockifi H1 smart lock - Cascade Hideaway exclusive" />
+  <meta name="theme-color" content="#0ea5a9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-start: #f0f4f8;
+      --bg-end: #d9e2ec;
+      --ink: #0f172a;
+      --ink-light: #334155;
+      --muted: #64748b;
+      --brand1: #0ea5a9;
+      --brand2: #2563eb;
+      --brand3: #8b5cf6;
+      --accent: #10b981;
+      --warn: #ef4444;
+      --glass: rgba(255,255,255,.88);
+      --glass-strong: rgba(255,255,255,.95);
+      --glass-border: rgba(15,23,42,.12);
+      --shadow-sm: 0 2px 8px rgba(2,6,23,.06);
+      --shadow: 0 8px 24px rgba(2,6,23,.12);
+      --shadow-lg: 0 20px 48px rgba(2,6,23,.18);
+      --cascade-brand: #0ea5a9;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-start: #0b1220;
+        --bg-end: #1e293b;
+        --ink: #f1f5f9;
+        --ink-light: #cbd5e1;
+        --muted: #94a3b8;
+        --glass: rgba(15,23,42,.85);
+        --glass-strong: rgba(15,23,42,.95);
+        --glass-border: rgba(255,255,255,.12);
+        --shadow-sm: 0 4px 12px rgba(0,0,0,.4);
+        --shadow: 0 12px 32px rgba(0,0,0,.5);
+        --shadow-lg: 0 24px 56px rgba(0,0,0,.6);
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html, body {
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      background-attachment: fixed;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: float 20s infinite ease-in-out;
+    }
+    
+    .bg-circle:nth-child(1) {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--brand1), transparent);
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+    
+    .bg-circle:nth-child(2) {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--brand2), transparent);
+      bottom: -150px;
+      right: -150px;
+      animation-delay: 7s;
+    }
+    
+    .bg-circle:nth-child(3) {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, var(--brand3), transparent);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-delay: 14s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.1); }
+      66% { transform: translate(-30px, 30px) scale(0.9); }
+    }
+
+    /* Cascade Watermark */
+    .cascade-watermark {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      opacity: 0.5;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      padding: 8px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-sm);
+      z-index: 100;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: opacity 0.3s ease;
+    }
+    
+    .cascade-watermark:hover {
+      opacity: 0.8;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: clamp(20px, 4vw, 60px) clamp(16px, 4vw, 40px);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header with enhanced styling */
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInDown 0.8s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--glass-strong);
+      backdrop-filter: blur(16px);
+      padding: 16px 32px;
+      border-radius: 50px;
+      border: 1.5px solid var(--glass-border);
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: var(--shadow), 0 0 20px rgba(14,165,169,0.2); }
+      50% { box-shadow: var(--shadow-lg), 0 0 40px rgba(14,165,169,0.4); }
+    }
+
+    .logo-icon {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--brand1), var(--brand2), var(--brand3));
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      animation: gradientShift 4s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    /* Action buttons */
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      background: var(--glass-strong);
+      color: var(--brand2);
+      border: 1.5px solid var(--glass-border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+      background: var(--glass);
+    }
+
+    .btn:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Progress indicator */
+    .progress-wrapper {
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .progress {
+      height: 8px;
+      background: rgba(15,23,42,0.1);
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--brand1), var(--brand2), var(--accent));
+      background-size: 200% 100%;
+      border-radius: 50px;
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: shimmer 2s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -100% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--glass);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 24px;
+      padding: clamp(20px, 3vw, 32px);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px) saturate(120%);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeInUp 0.6s ease backwards;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(14,165,169,0.3);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+
+    .card-need, .card-steps, .card-lowbat, .card-quickref, .card-trouble {
+      width: 100%;
+    }
+    
+    .card-need {
+      border: 2px solid var(--glass-border);
+    }
+    
+    .info-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    
+    @media (min-width: 768px) {
+      .info-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .card-trouble { 
+      background: linear-gradient(135deg, var(--glass), var(--glass-strong));
+      border: 2px solid var(--glass-border);
+    }
+    
+    .card-steps {
+      background: linear-gradient(135deg, var(--glass), var(--glass-strong));
+      border: 2px solid var(--glass-border);
+    }
+    
+    /* Section spacing */
+    .card-need {
+      margin-bottom: 8px;
+    }
+    
+    .card-steps {
+      margin-bottom: 8px;
+    }
+    
+    .info-row {
+      margin-bottom: 8px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .card h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .card-description {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    /* Steps */
+    .steps {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      background: var(--glass-strong);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+
+    .step:hover {
+      background: var(--glass);
+      transform: translateX(4px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      box-shadow: 0 4px 12px rgba(14,165,169,0.3), inset 0 0 0 2px rgba(255,255,255,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-number::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      100% { left: 200%; }
+    }
+
+    .step h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      color: var(--ink-light);
+      font-size: 0.95rem;
+    }
+
+    /* Checklist */
+    .checklist {
+      display: grid;
+      gap: 12px;
+    }
+
+    .checklist label {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 12px;
+      align-items: start;
+      cursor: pointer;
+      padding: 12px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .checklist label:hover {
+      background: rgba(14,165,169,0.05);
+    }
+
+    .checklist input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      margin-top: 2px;
+      accent-color: var(--brand1);
+    }
+
+    /* Specs Grid */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .spec-item {
+      text-align: center;
+      padding: 20px 16px;
+      background: var(--glass-strong);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 14px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+
+    .spec-item:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spec-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .spec-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .spec-value {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    /* Alert boxes */
+    .alert, .tip {
+      padding: 18px;
+      border-radius: 14px;
+      margin-top: 16px;
+      border: 1.5px solid;
+      backdrop-filter: blur(12px);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .alert {
+      background: rgba(239,68,68,0.08);
+      border-color: rgba(239,68,68,0.4);
+    }
+
+    .tip {
+      background: rgba(16,185,129,0.08);
+      border-color: rgba(16,185,129,0.4);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+
+    .alert strong, .tip strong {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    /* Troubleshooting */
+    details {
+      background: var(--glass-strong);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    details:hover {
+      background: var(--glass);
+      box-shadow: var(--shadow-sm);
+    }
+
+    details[open] {
+      border-color: var(--brand1);
+      box-shadow: var(--shadow);
+    }
+
+    details summary {
+      font-weight: 700;
+      color: var(--ink);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    details summary::before {
+      content: '▶';
+      transition: transform 0.3s ease;
+      color: var(--brand1);
+      font-size: 0.8rem;
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    details ul {
+      margin-top: 12px;
+      padding-left: 24px;
+      color: var(--ink-light);
+    }
+
+    details li {
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* List styling */
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      padding-left: 24px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 640px) {
+      .step {
+        grid-template-columns: 50px 1fr;
+      }
+      
+      .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .bg-animation, .cascade-watermark, .actions { display: none; }
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-animation">
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+  </div>
+
+  <div class="cascade-watermark">
+    🏠 CASCADE USE ONLY
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="logo-badge">
+        <span class="logo-icon">🔐</span>
+        <div>
+          <h1>Lockifi H1</h1>
+        </div>
+      </div>
+      
+      <p class="subtitle">🔋 Battery Replacement & Quick Help Guide</p>
+
+      <nav class="actions">
+        <a class="btn" href="https://cdn.shopify.com/s/files/1/0590/4315/2066/files/H1-user_manual.pdf?v=1662704936" target="_blank" rel="noopener">
+          📄 Official Manual
+        </a>
+        <button class="btn" type="button" onclick="window.print()">
+          🖨️ Print Guide
+        </button>
+        <button class="btn" type="button" id="copyLinkBtn">
+          🔗 Copy Link
+        </button>
+      </nav>
+
+      <div class="progress-wrapper">
+        <div class="progress-label">
+          <span>Preparation Progress</span>
+          <span id="progressText">0%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- What you need -->
+      <section class="card card-need">
+        <div class="card-header">
+          <span class="card-icon">📦</span>
+          <h2>What You Need</h2>
+        </div>
+        <div class="card-description">Gather these items before starting</div>
+        
+        <div class="checklist" id="needList">
+          <label>
+            <input type="checkbox" />
+            <span>🔋 4× AA alkaline batteries (new, same brand)</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span>🔧 Small Phillips screwdriver</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span>🧹 Soft cleaning cloth</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span>🔌 USB power bank (optional emergency)</span>
+          </label>
+        </div>
+
+        <div class="tip">
+          <strong>💡 Pro Tip</strong>
+          <p>Working voltage: 6V (4×AA). Low-voltage warning triggers below 4.8V. Emergency USB port is on the front panel.</p>
+        </div>
+      </section>
+
+      <!-- Battery Replacement Steps -->
+      <section class="card card-steps">
+        <div class="card-header">
+          <span class="card-icon">🔄</span>
+          <h2>Battery Replacement Steps</h2>
+        </div>
+        <div class="card-description">Follow these steps carefully for proper installation</div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h3>🚪 Open Battery Cover</h3>
+              <p>From inside the door, open the back panel's battery cover to access the battery tray.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h3>🔋 Remove Old Batteries</h3>
+              <p>Take out all four batteries. Check compartment for +/− markings and inspect for corrosion.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h3>⚡ Install New Batteries</h3>
+              <p>Insert 4 new AA alkaline batteries following polarity icons precisely. Never mix brands or used cells.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>
+              <h3>✅ Close & Test</h3>
+              <p>Reattach the cover. Test by unlocking via passcode, fingerprint, or app to confirm operation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert">
+          <strong>⚠️ Critical Requirements</strong>
+          <ul>
+            <li>Use only AA alkaline batteries</li>
+            <li>Never use lithium or rechargeable batteries</li>
+            <li>Replace all 4 at once - never mix old and new</li>
+            <li>Match polarity marks exactly</li>
+          </ul>
+        </div>
+
+        <div class="tip">
+          <strong>💡 Emergency Power Access</strong>
+          <p>Dead battery while locked out? Plug a 5V USB power bank into the front panel USB port to power the lock temporarily. This does NOT charge the internal batteries.</p>
+        </div>
+      </section>
+
+      <!-- Info Row: Low Battery & Quick Reference -->
+      <div class="info-row">
+        <!-- Low Battery Checklist -->
+        <section class="card card-lowbat">
+          <div class="card-header">
+            <span class="card-icon">⚡</span>
+            <h2>Low Battery?</h2>
+          </div>
+          <div class="card-description">Quick recovery checklist</div>
+
+          <ul>
+            <li>Replace all 4× AA alkaline batteries (same brand)</li>
+            <li>Match polarity + / − exactly as shown</li>
+            <li>Clean battery contacts thoroughly</li>
+            <li>Test unlock via code/fingerprint/app</li>
+            <li>Emergency? Use USB 5V power at front panel</li>
+          </ul>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <div class="spec-icon">⚙️</div>
+              <div class="spec-label">System</div>
+              <div class="spec-value">6V</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-icon">⚠️</div>
+              <div class="spec-label">Alarm</div>
+              <div class="spec-value">&lt;4.8V</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="card card-quickref">
+        <div class="card-header">
+          <span class="card-icon">📊</span>
+          <h2>Quick Reference</h2>
+        </div>
+        <div class="card-description">Essential specifications at a glance</div>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-icon">🔋</div>
+            <div class="spec-label">Battery Type</div>
+            <div class="spec-value">4 × AA</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">⚡</div>
+            <div class="spec-label">Voltage</div>
+            <div class="spec-value">6V</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🚨</div>
+            <div class="spec-label">Low Alert</div>
+            <div class="spec-value">&lt;4.8V</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">📍</div>
+            <div class="spec-label">Location</div>
+            <div class="spec-value">Interior</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🔌</div>
+            <div class="spec-label">Emergency</div>
+            <div class="spec-value">USB 5V</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🏷️</div>
+            <div class="spec-label">Model</div>
+            <div class="spec-value">H1</div>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <!-- Troubleshooting -->
+      <section class="card card-trouble">
+        <div class="card-header">
+          <span class="card-icon">🔧</span>
+          <h2>Troubleshooting</h2>
+        </div>
+        <div class="card-description">Common issues and solutions</div>
+
+        <details>
+          <summary>🔴 Keypad won't light or respond</summary>
+          <ul>
+            <li>Verify each battery's polarity (+/−) matches compartment markings</li>
+            <li>Ensure all cells are brand new with proper voltage</li>
+            <li>Check back panel cable connection - reseat if needed</li>
+            <li>Verify no wires were pinched during installation</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>🔒 Entered code but door won't unlock</summary>
+          <ul>
+            <li>Check if electronic privacy lock is enabled (button locked state)</li>
+            <li>Only administrator app or mechanical key can unlock when privacy is on</li>
+            <li>Disable privacy mode in app, then retry code</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>⏱️ Too many wrong codes entered</summary>
+          <ul>
+            <li>After 5 consecutive wrong attempts, keypad locks for ~5 minutes</li>
+            <li>Use alternate method (app/mechanical key) or wait for timeout</li>
+            <li>Double-check correct passcode before next attempt</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>👆 Fingerprint not recognized</summary>
+          <ul>
+            <li>Clean finger and sensor surface with soft cloth</li>
+            <li>Try different finger angles or pressure</li>
+            <li>Re-enroll fingerprint if problem persists</li>
+            <li>Ensure finger is dry and clean</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>🔋 Battery draining too quickly</summary>
+          <ul>
+            <li>Use high-quality alkaline batteries only</li>
+            <li>Avoid exposing lock to extreme temperatures</li>
+            <li>Check for firmware updates in the app</li>
+            <li>Ensure no physical obstructions causing motor strain</li>
+          </ul>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2024 Lockifi • Model H1 Battery Guide • For complete details, refer to the official manual</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;">⏰ Last updated: <span id="lastUpdated"></span></p>
+    </footer>
+  </div>
+
+  <script>
+    const manualURL = "https://cdn.shopify.com/s/files/1/0590/4315/2066/files/H1-user_manual.pdf?v=1662704936";
+    
+    // Update last modified date
+    document.getElementById("lastUpdated").textContent = new Date().toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+
+    // Copy link functionality
+    document.getElementById("copyLinkBtn")?.addEventListener("click", async (e) => {
+      try {
+        await navigator.clipboard.writeText(manualURL);
+        e.currentTarget.innerHTML = "✅ Copied!";
+        setTimeout(() => {
+          e.currentTarget.innerHTML = "🔗 Copy Link";
+        }, 2000);
+      } catch {
+        e.currentTarget.innerHTML = "📋 Press Ctrl+C";
+      }
+    });
+
+    // Progress tracking
+    function updateProgress() {
+      const checks = document.querySelectorAll('#needList input[type="checkbox"]');
+      const done = Array.from(checks).filter(c => c.checked).length;
+      const percent = Math.round((done / checks.length) * 100);
+      
+      document.getElementById("progressBar").style.width = percent + "%";
+      document.getElementById("progressText").textContent = percent + "%";
+      
+      // Celebrate completion
+      if (percent === 100) {
+        document.getElementById("progressText").textContent = "🎉 Ready!";
+      }
+    }
+
+    document.getElementById("needList")?.addEventListener("change", updateProgress);
+    updateProgress();
+
+    // Save checkbox state to localStorage
+    const checkboxes = document.querySelectorAll('#needList input[type="checkbox"]');
+    checkboxes.forEach((cb, i) => {
+      const saved = localStorage.getItem(`lockifi-check-${i}`);
+      if (saved === "true") cb.checked = true;
+      
+      cb.addEventListener("change", () => {
+        localStorage.setItem(`lockifi-check-${i}`, cb.checked);
+        updateProgress();
+      });
+    });
+  </script>
+</body>
+</html>
